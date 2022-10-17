@@ -19,6 +19,12 @@ function verify_profile_config {
         echo "Uploads Desktop Symlink Exists"
     else
         echo "Creating Uploads Desktop Symlink"
+        if [ -d "$HOME/Desktop "]; then
+            echo "Desktop Exits"
+        else
+           echo "desktop didn't exist"
+           mkdir $HOME/Desktop
+        fi
         ln -sf $HOME/Uploads $HOME/Desktop/Uploads
     fi
 
